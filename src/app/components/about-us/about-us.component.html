@@ -1,0 +1,10 @@
+<h1>Sobre Nosotros</h1>
+
+<div *ngIf='userName != undefined; else userNameEmpty'>
+    <p>Contenido de la página.</p>
+</div>
+
+<ng-template #userNameEmpty>
+    <p>Hola anónimo!.</p>
+    <p>Para ver esta página primero tienes que <a routerLink="/">iniciar sesión</a>.</p>
+</ng-template>

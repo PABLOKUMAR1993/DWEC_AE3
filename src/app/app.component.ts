@@ -45,6 +45,8 @@ export class AppComponent {
     this.userList.push( userDefault );
     userDefault = new Users( "raul", "4321" );
     this.userList.push( userDefault );
+    userDefault = new Users( "felix", "0000" );
+    this.userList.push( userDefault );
   
   }
 
@@ -68,7 +70,9 @@ export class AppComponent {
 
       for( let i=0; i<this.userList.length; i++) {
 
-        if( this.userList[i].getUser == this.userName && this.userList[i].getPass == this.pass ) {
+        if( this.userList[i].getUser == this.userName )
+        
+            if(this.userList[i].getPass == this.pass ) {
 
           this.logged = true;
           this.userNameFixed = this.userName;

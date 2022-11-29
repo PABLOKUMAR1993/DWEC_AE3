@@ -91,4 +91,4 @@ Trabajo realizado por `Grupo 01 - Raúl Herrera & Pavlo Dundyk`.
 
 >### Iniciativa del proyecto.
     
-    Proyecto AE3_Angular para la asignatura Desarrollo Web Entorno Cliente de 2º de DAW para el profesor Félix de Pablo.
+`Proyecto AE3_Angular para la asignatura Desarrollo Web Entorno Cliente de 2º de DAW para el profesor Félix de Pablo.`

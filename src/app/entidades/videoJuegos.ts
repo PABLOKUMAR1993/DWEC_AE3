@@ -9,7 +9,7 @@ export class VideoJuegos {
     private title: string;
     private company: string;
     private img: string;
-    private reviwe: number;
+    private review: number;
 
     private static acumuladorId : number = 1;
 
@@ -24,7 +24,7 @@ export class VideoJuegos {
         this.title = title;
         this.company = company;
         this.img = img;
-        this.reviwe = review;
+        this.review = review;
 
     }
 
@@ -65,12 +65,12 @@ export class VideoJuegos {
         this.img = value;
     }
 
-    public get getReviwe(): number {
-        return this.reviwe;
+    public get getReview(): number {
+        return this.review;
     }
 
-    public set setReviwe(value: number) {
-        this.reviwe = value;
+    public set setReview(value: number) {
+        this.review = value;
     }
     
     
@@ -79,7 +79,7 @@ export class VideoJuegos {
     ///////////////
 
     public toString() : string {
-        return `- ID: ${this.id}, - TÍTULO: ${this.title}, - COMPAÑIA: ${this.company}, - IMÁGEN: ${this.img}, - VALORACIONES: ${this.reviwe}.`;
+        return `- ID: ${this.id}, - TÍTULO: ${this.title}, - COMPAÑIA: ${this.company}, - IMÁGEN: ${this.img}, - VALORACIONES: ${this.review}.`;
     }
 
 }

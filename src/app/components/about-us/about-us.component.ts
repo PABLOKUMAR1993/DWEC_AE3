@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -12,23 +12,15 @@ import { ActivatedRoute } from '@angular/router';
 export class AboutUsComponent {
 
 
-  ///////////////
-  // Atributos.//
-  ///////////////
-
-
-  userName:string = "";
-
-
   /////////////////
   // Constructor.//
   /////////////////
 
 
-  constructor( private route: ActivatedRoute ) {
+  /**
+   * Método Constructor que mediante @param title le asigna un título a la pestaña del navegador.
+   */
+  constructor( title: Title ) { title.setTitle( "Sobre Nosotros" ); }
 
-    this.userName = route.snapshot.params[ "userName" ];
-
-  }
 
 }

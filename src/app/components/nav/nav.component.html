@@ -1,6 +1,9 @@
-<ul>
-    <li><a routerLink="/videogames">Video Juegos</a></li>
-    <li><a routerLink="/about">Sobre Nosotros</a></li>
-    <li><a routerLink="/contact">Contacto</a></li>
-    <li><a routerLink="/">Login</a></li>
-</ul>
+<div>
+    <ul>
+        <li><a [routerLink]="[ '/games', userName ]">Video Juegos</a></li>
+        <li><a routerLink="/about">Sobre Nosotros</a></li>
+        <li><a routerLink="/contact">Contacto</a></li>
+        <!-- Muestro el nombre de usuario. -->
+        <li>Bienvenido {{userName}}</li>
+    </ul>
+</div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           

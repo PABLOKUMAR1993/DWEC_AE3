@@ -1,0 +1,12 @@
+<div>
+
+    <p>Id: {{gameId}}.</p>
+    <p>Título:<br><span>{{gameTitle}}</span>.</p>
+    <p>Compañia:<br>{{gameCompany}}.</p>
+    <p>Valoración: {{gameReview}} / 5.</p>
+    <img src="{{gameImg}}" alt="imágen portada del video juego."/>
+
+    <!-- Volvemos a la lista pasandole el usuario de nuevo. -->
+    <button [routerLink]="[ '/games', userName ]">volver</button>
+
+</div>

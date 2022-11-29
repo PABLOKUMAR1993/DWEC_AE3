@@ -1,10 +1,4 @@
-<h1>Sobre Nosotros</h1>
-
-<div *ngIf='userName != undefined; else userNameEmpty'>
-    <p>Contenido de la página.</p>
+<div>
+    <h1>Sobre Nosotros.</h1>
+    <p>Holi! Somos Raúl y Pavlo del Grupo 01 y hemos hecho un trabajo muy guay con Angular en el cual hacemos un inicio de sesión y mostrarmos una lista de videojuegos más guay aún.</p>
 </div>
-
-<ng-template #userNameEmpty>
-    <p>Hola anónimo!.</p>
-    <p>Para ver esta página primero tienes que <a routerLink="/">iniciar sesión</a>.</p>
-</ng-template>

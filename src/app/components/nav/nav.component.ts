@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 
 @Component({
@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 })
 
 
-export class NavComponent {}
+export class NavComponent {
+
+  // Atributo recibido de padre con el nombre de usuario.
+  @Input() userName: string;
+
+}

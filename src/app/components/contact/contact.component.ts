@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -17,26 +18,25 @@ export class ContactComponent {
   ///////////////
 
 
-  name:string = "";
-  about:string = "";
-  content:string = "";
-  userName:string = "";
+  name: string = "";
+  about: string = "";
+  content: string = "";
   
-  nameEmpty:boolean = false;
-  aboutEmpty:boolean = false;
-  contentEmpty:boolean = false;
-  formFull:boolean = false;
+  nameEmpty: boolean = false;
+  aboutEmpty: boolean = false;
+  contentEmpty: boolean = false;
+  formFull: boolean = false;
+
 
   /////////////////
   // Constructor.//
   /////////////////
 
 
-  constructor( private route: ActivatedRoute ) {
-
-    this.userName = route.snapshot.params[ "userName" ];
-
-  }
+  /**
+   * Método Constructor que mediante @param title le pone un título a la pestaña del navegador.
+   */
+  constructor( title: Title ) { title.setTitle( "Contacto" ); }
 
 
   /////////////
@@ -48,7 +48,7 @@ export class ContactComponent {
    * Si alguno de los inputs está vacio, muestro un error en el o los inputs correspondientes.
    * Si los tres tienen contenido, muestro un mensaje de enviado correctamente.
    */
-  public receiveForm() {
+  public receiveForm(): void {
 
     this.cleanErrors();
 
@@ -62,8 +62,9 @@ export class ContactComponent {
       this.contentEmpty = true;
     }
 
-    if( this.nameEmpty && this.aboutEmpty && this.contentEmpty ) {
+    if( !this.nameEmpty && !this.aboutEmpty && !this.contentEmpty ) {
       this.formFull = true;
+      this.cleanInputs();
     }
 
   }
@@ -73,13 +74,26 @@ export class ContactComponent {
    * Cada vez que se pulse el botón de enviar, se vaciaran los mensajes de error
    * y sólo se mostarán los nuevos que procedan.
    */
-  public cleanErrors() {
+  public cleanErrors(): void {
 
     if( this.nameEmpty || this.aboutEmpty || this.contentEmpty ) {
       this.nameEmpty = false;
       this.aboutEmpty = false;
       this.contentEmpty = false;
+      this.formFull = false;
     }
+
+  }
+
+  
+  /**
+   * Vacia el contenido de los inputs.
+   */
+  public cleanInputs(): void {
+
+    this.name = "";
+    this.about = "";
+    this.content = "";
 
   }
 

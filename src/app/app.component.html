@@ -1,3 +1,40 @@
-<app-nav></app-nav>
-<router-outlet></router-outlet>
+<h1>AE3 Angular.</h1>
+
+<!-- Sólo muestro la barra de navegación si ha iniciado sesión. -->
+<app-nav *ngIf="logged" [userName]="userNameFixed"></app-nav>
+
+
+
+<!-- Si no hay sesión, muestro este contendio. -->
+
+<div class="contariner-login" *ngIf="!logged; else loggedTrue">
+    <div>
+        <h1>Iniciar Sesión</h1>
+        <label for="userName">
+            Nombre de Usario:
+            <input id="userName" type="text" [(ngModel)]="userName"/>
+        </label>
+        <p *ngIf="userNameError" class="error">El nombre de usuario no puede estar vacio.</p>
+
+        <label for="pass">
+            Contraseña:
+            <input id="pass" type="password" [(ngModel)]="pass"/>
+        </label>
+        <p *ngIf="passError" class="error">La contraseña no puede estar vacia.</p>
+
+        <!-- Muestro uno de los siguientes mensajes, según si ha introducido un usuario y contraseña correctos. -->
+        <p *ngIf="logged" class="exito">Usuario y contraseña correctos, ir a registro.</p>
+        <p *ngIf="loggedError" class="error">Usuario o contraseña incorrectos, intentalo de nuevo.</p>
+
+        <button (click)="login()">Iniciar Sesión</button>
+    </div>
+</div>
+
+
+<!-- Si ya existe la sesión, muestro este. -->
+
+<ng-template #loggedTrue>
+    <router-outlet></router-outlet>
+</ng-template>
+
 <app-footer></app-footer>

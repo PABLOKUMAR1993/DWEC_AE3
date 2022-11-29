@@ -1,1 +1,18 @@
-<p>video-games works!</p>
+<div>
+    
+    <h1>Listado de Video Juegos</h1>
+
+    <!-- Saludo al usuario con su User Name. -->
+    <h4>Hola <span>{{userName}}</span>!, esta es la lista de Video Juegos.</h4>
+
+    <div *ngFor="let game of gamesList" (click)="selected(game)" class="card">
+        <p>Id: {{game.getId}}.</p>
+        <h4>Título:<br><span>{{game.getTitle}}</span>.</h4>
+        <p>Valoración: {{game.getReview}} / 5.</p>
+
+        <!-- Le paso al componente hijo los datos del juego elegido. -->
+        <a [routerLink]="[ '/game', game.getId, game.getTitle, game.getCompany, game.getImg, game.getReview, userName ]">Ver más</a>
+    </div>
+
+
+</div>

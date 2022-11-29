@@ -1,30 +1,33 @@
-<h1>FORMULARIO DE CONTACTO</h1>
+<div class="contact-container">
 
-<div *ngIf='userName != undefined; else userNameEmpty'>
-    <label for="name">
-        Nombre:
-        <input id="name" type="text" [(ngModel)]="name"/>
-    </label>
-    <p *ngIf="nameEmpty">El nombre no puede estar vacio.</p>
+    <h1>FORMULARIO DE CONTACTO</h1>
 
-    <label for="about">
-        Asunto:
-        <input id="about" type="text" [(ngModel)]="about"/>
-    </label>
-    <p *ngIf="aboutEmpty">El asunto no puede estar vacio.</p>
+    <div>
+        <label for="name">
+            Nombre:
+            <input id="name" type="text" [(ngModel)]="name"/>
+        </label>
+        <!-- Si el nombre está vacio: -->
+        <p *ngIf="nameEmpty" class="error">El nombre no puede estar vacio.</p>
 
-    <label for="content">
-        ¿De qué se trata?:
-        <textarea id="content" type="text" [(ngModel)]="content"></textarea>
-    </label>
-    <p *ngIf="contentEmpty">El contenido no puede estar vacio.</p>
+        <label for="about">
+            Asunto:
+            <input id="about" type="text" [(ngModel)]="about"/>
+        </label>
+        <!-- Si el asunto está vacio: -->
+        <p *ngIf="aboutEmpty" class="error">El asunto no puede estar vacio.</p>
 
-    <p *ngIf="formFull">¡Gracias! Hemos recibido su formulario correctamente :)</p>
+        <label for="content">
+            ¿De qué se trata?:
+            <textarea id="content" type="text" [(ngModel)]="content"></textarea>
+        </label>
+        <!-- Si el mensaje está vacio: -->
+        <p *ngIf="contentEmpty" class="error">El contenido no puede estar vacio.</p>
 
-    <button (click)="receiveForm()">Enviar</button>
+        <!-- Si está todo relleno: -->
+        <p *ngIf="formFull" class="exito">¡Gracias! Hemos recibido su formulario correctamente :)</p>
+
+        <button (click)="receiveForm()">Enviar</button>
+    </div>
+
 </div>
-
-<ng-template #userNameEmpty>
-    <p>Hola anónimo!.</p>
-    <p>Para ver esta página primero tienes que <a routerLink="/">iniciar sesión</a>.</p>
-</ng-template>
